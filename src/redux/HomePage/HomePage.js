@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = 'https://api.coinstats.app/public/v1/coins/';
+const BASE_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false';
 
 export const fetchCoins = createAsyncThunk(
   'coins/fetchCoins',
@@ -9,10 +9,10 @@ export const fetchCoins = createAsyncThunk(
     const response = await fetch(BASE_URL);
     
     const data = await response.json();
-    const coins = data.coins.map((coin, i) => ({
+    const coins = data.map((coin, i) => ({
       id: coin.id,
       name: coin.name,
-      logo: coin.icon,
+      logo: coin.image,
       index: i,
     }));
     return coins;
