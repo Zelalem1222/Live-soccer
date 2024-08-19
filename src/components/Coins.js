@@ -7,9 +7,9 @@ const Coins = ({
   id, logo, name,
 }) => (
   <>
-    <div className="league-card">
+    <div className="coin-card">
       <Link key={id} to={`/${id}`} state={{ id }}>
-        <img src={logo} alt={name} className={`league-${id}`} />
+        <img src={logo} alt={name} className={`coin-${id}`} />
         <p>{name}</p>
       </Link>
     </div>
