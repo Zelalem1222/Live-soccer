@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
@@ -24,8 +25,7 @@ const HomePage = () => {
       <div className="nav-bar">
         <p>Coins</p>
         <div className="total">
-          Total coins :
-          {coins.length}
+          <h3>{`Total Coins : ${coins.length}`}</h3>
         </div>
         <div className="nav-icons">
           <FaMicrophone size={30} />
@@ -50,7 +50,7 @@ const HomePage = () => {
           }}
         />
       </div>
-      <div className="leagues-container">
+      <div className="coins-container">
         {coins
           .filter((element) => {
             const filter = search.get('filter');
@@ -58,7 +58,7 @@ const HomePage = () => {
             const coinName = element.name.toLowerCase();
             return coinName.startsWith(filter.toLowerCase());
           })
-          .map((element) => (
+          .map((element ) => (
             <>
               <Coins
                 id={element.id}

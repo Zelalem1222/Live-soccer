@@ -1,7 +1,7 @@
 .nav-bar {
   display: flex;
-  background: black;
-  color: #fff;
+  background: #fff;
+  color: #2F3645;
   justify-content: space-around;
   align-content: center;
   padding: 20px;
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  color: #fff;
+  color: #2F3645;
   align-items: center;
 }
 
@@ -57,9 +57,9 @@
   background:
     radial-gradient(
       circle,
-      rgba(22, 52, 247, 0.419) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(200, 250, 250, 0.419) 0%,
+      rgba(100, 150, 180, 0.6) 50%,
+      rgba(85, 85, 85, 0.8) 100%
     ),
     url(../images/1\ \(1\).webp);
   background-size: 100%;
@@ -115,69 +115,65 @@
   color: #e4e4e4;
 }
 
-.leagues-container {
+.coins-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
-  gap: 10px;
   width: 100%;
-  background-color: dimgrey;
+  background-color: #fff;
   object-fit: cover;
   background-size: 100%;
 }
 
-.league-card {
-  width: 45%;
-  height: 200px;
-  padding: 10px;
+.coin-card {
+  margin: 1.1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
   text-align: center;
-  background-color: currentColor;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.league-card :hover {
+.coin-card :hover {
   transform: translateY(-10px);
 }
 
-.league-card img {
+.coin-card img {
   width: 100%;
   height: 100px;
   object-fit: contain;
 }
 
-.league-card p {
-  color: blanchedalmond;
+.coin-card p {
+  color: #2F3645;
   font-size: 1.1em;
 }
 
-.league-card a {
+.coin-card a {
   text-decoration: none;
 }
 
 
 
 @media only screen and (min-width: 768px) {
-  .league-card {
+  .coin-card {
     width: 9%;
     height: 250px;
   }
 
-  .league-card img {
+  .coin-card img {
     width: 80%;
     height: auto;
   }
 
-  .league-card .league-48 {
+  .coin-card .coin-48 {
     width: 35%;
   }
 
-  .league-card p {
+  .coin-card p {
     font-size: 1.6rem;
   }
 }
