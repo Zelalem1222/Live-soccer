@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
-import { IoChevronBackOutline } from 'react-icons/io5';
+import { IoArrowBackSharp } from "react-icons/io5";
 import { fetchCoinsDetails } from '../redux/Details/Details';
 import './Details.css';
 
@@ -13,50 +14,36 @@ const Details = () => {
 
   useEffect(() => {
     dispatch(fetchCoinsDetails(id));
-  }, []);
+  }, [details]);
 
-  return (
-    <>
-
-      <div className="container">
-
+  return (<div className='container'>
         {details.map((coin) => (
-          <div key={coin.name} className="card text-white bg-dark mb-3" style={{ width: '18rem' }}>
+          <div key={coin.id} className="card">
             <Link to="/">
-              <IoChevronBackOutline size={30} style={{ color: 'black' }} />
+              <IoArrowBackSharp size={30} style={{ color: '#2F3645' }} />
             </Link>
             <img src={coin.image} alt={coin.name} />
             <div className="card-body">
-              <h5 className="card-title">
-                Name:
-                {coin.name}
+              <h3 className="card-title">
+               {`Name : ${coin.name}`}
+              </h3>
+              <h5 className="card-text">
+                {`Price: ${coin.price}$`}
               </h5>
-              <p className="card-text">
-                Price:
-                {coin.price}
-                $
-              </p>
-              <p className="card-text">
-                priceChange1d:
-                {coin.priceChange1d}
-                $
-              </p>
-              <p className="card-text">
-                priceChange1h:
-                {coin.priceChange1h}
-                $
-              </p>
-              <p className="card-text">
-                priceChange1w:
-                {coin.priceChange1w}
-                $
-              </p>
+              <h5 className="card-text">
+                {`price Change 1 day : ${coin.priceChange1d}$`}
+              </h5>
+              <h5 className="card-text">
+              {`price Change 1 hour : ${coin.priceChange1h}$`}
+              </h5>
+              <h5 className="card-text">
+              {`price Change 1 week : ${coin.priceChange1w}$`}
+              </h5>
             </div>
           </div>
         ))}
-      </div>
 
-    </>
+</div>
   );
 };
 
